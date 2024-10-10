@@ -554,16 +554,16 @@ video {
   display: none;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
 
 .left-1\/2 {
   left: 50%;
-}
-
-.top-1\/2 {
-  top: 50%;
 }
 
 .flex {
@@ -588,6 +588,28 @@ video {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.origin-bottom {
+  transform-origin: bottom;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes spin-variable {
+  0% {
+    transform: rotate(var(--tw-rotate-start, 0deg));
+  }
+
+  100% {
+    transform: rotate(calc(360deg + var(--tw-rotate-start, 0deg)));
+  }
+}
+
+.animate-spin-variable {
+  animation: spin-variable var(--tw-rotate-period, 60s) linear infinite;
 }
 
 .flex-col {
