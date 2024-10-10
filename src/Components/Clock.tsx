@@ -18,10 +18,14 @@ const ClockArrow = (props: hourMarksProps) => {
 };
 
 const Clock = () => {
+  const date = new Date();
+
+  console.log('ss');
   return (
     <div className="relative w-1/2 aspect-square bg-blue-400 rounded-full">
-      <ClockArrow angle={30} rotationPeriod={15} />
-      <ClockArrow angle={10} />
+      <ClockArrow angle={date.getSeconds() * 6} rotationPeriod={60} />
+      <ClockArrow angle={date.getMinutes() * 6} rotationPeriod={3600} />
+      <ClockArrow angle={date.getHours() * 30} rotationPeriod={3600 * 24} />
     </div>
   );
 };
