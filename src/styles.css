@@ -1,0 +1,5 @@
+@layer utilities {
+    .custom-rotate {
+        transform: rotate(var(--angle, 0deg));
+    }
+}
